@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Senaquinho</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Senaquinho</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html" style="color:var(--primary-orange);">Galeria</a></li>
+                <li><a href="time.html">Integrantes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Nossa Galeria</h1>
+        <p>Protótipos, testes de campo e bastidores da equipe</p>
+    </div>
+
+    <div class="gallery-filters">
+        <button class="filter-btn" onclick="carregarGaleria('todos')">Todas</button>
+        <button class="filter-btn" onclick="carregarGaleria('prototipos')">Protótipos</button>
+        <button class="filter-btn" onclick="carregarGaleria('testes')">Testes</button>
+        <button class="filter-btn" onclick="carregarGaleria('campo')">Campo</button>
+    </div>
+
+    <div id="grid-galeria" class="grid-gallery">
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+/* =========================================
+   1. VARIÁVEIS E BASE
+   ========================================= */
+:root {
+    --primary-blue: #003366;   /* Azul Senac */
+    --primary-orange: #ff8c00; /* Laranja Destaque */
+    --text-dark: #333;
+    --text-gray: #666;
+    --bg-light: #f4f6f9;
+    --white: #fff;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. HEADER & NAV
+   ========================================= */
+header {
+    background-color: var(--primary-blue);
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-orange); }
+
+/* =========================================
+   3. LAYOUT DO BLOG (Lista + Sidebar)
+   ========================================= */
+.page-header {
+    background: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 70% Post | 30% Sidebar */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+}
+
+/* Cartão do Post (Horizontal) */
+.blog-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    height: 220px;
+    border: 1px solid #eee;
+}
+
+.blog-card:hover { transform: translateY(-3px); }
+
+.blog-card img {
+    width: 280px;
+    height: 100%;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.blog-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.blog-title {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.blog-meta {
+    font-size: 0.8rem;
+    color: var(--primary-orange);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.blog-desc {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Botão "Ler Mais" */
+.btn-cta {
+    background: var(--primary-orange);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.btn-cta:hover { background: #e67e00; }
+
+/* =========================================
+   4. SIDEBAR (Lateral Direita)
+   ========================================= */
+.sidebar-widget {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.widget-title {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-orange);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.cat-tag {
+    display: inline-block;
+    background: #eee;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 3px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.cat-tag:hover { background: var(--primary-blue); color: white; }
+
+/* =========================================
+   5. GALERIA (Grid)
+   ========================================= */
+.gallery-filters {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-orange);
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover { transform: translateY(-5px); }
+
+/* =========================================
+   6. RESPONSIVO (Celular)
+   ========================================= */
+@media (max-width: 768px) {
+    .blog-layout { grid-template-columns: 1fr; }
+    .blog-card { flex-direction: column; height: auto; }
+    .blog-card img { width: 100%; height: 200px; }
+    .navbar { flex-direction: column; gap: 15px; }
+}
+
+/* =========================================
+   PÁGINA DO POST ÚNICO (post.html)
+   ========================================= */
+
+/* Container padrão */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Layout principal: Post + Sidebar */
+.blog-container {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 60px;
+}
+
+/* =========================================
+   ÁREA PRINCIPAL DO POST
+   ========================================= */
+
+main {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Conteúdo carregado pelo JS */
+#post-content-area h1 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+#post-content-area .post-meta {
+    font-size: 0.85rem;
+    color: var(--primary-orange);
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Imagem principal do post */
+#post-content-area img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Texto do post */
+#post-content-area p {
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+/* Subtítulos dentro do post */
+#post-content-area h2 {
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--primary-orange);
+    padding-left: 12px;
+}
+
+/* Lista dentro do post */
+#post-content-area ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#post-content-area ul li {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   BREADCRUMB (Blog > Post)
+   ========================================= */
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-orange);
+}
+
+/* =========================================
+   SIDEBAR DIREITA
+   ========================================= */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Botões das categorias */
+aside button.btn-cta {
+    border-radius: 6px;
+    font-size: 0.85rem;
+    padding: 10px;
+}
+
+/* Postagens recentes */
+#recent-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card mini-post */
+.recent-post-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.recent-post-item:hover {
+    background: #f2f2f2;
+}
+
+/* Thumb */
+.recent-post-item img {
+    width: 65px;
+    height: 55px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Texto */
+.recent-post-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   RESPONSIVO (CELULAR)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 25px;
+    }
+
+    #post-content-area h1 {
+        font-size: 1.6rem;
+    }
+
+    aside {
+        margin-top: 30px;
+    }
+}
+
+/* =========================================
+   PÁGINA DO TIME (time.html)
+   ========================================= */
+
+/* HERO DO TIME */
+.hero {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    display: inline-block;
+    font-size: 1.1rem;
+    background: var(--primary-orange);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* =========================================
+   GRID DA EQUIPE
+   ========================================= */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding-bottom: 70px;
+}
+
+/* CARD DO INTEGRANTE */
+.team-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #eee;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* FOTO */
+.team-photo {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+/* INFORMAÇÕES */
+.team-info {
+    padding: 20px 15px;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+/* TAG DE FUNÇÃO */
+.team-role {
+    display: inline-block;
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+    background: var(--primary-orange);
+}
+
+/* =========================================
+   VARIAÇÕES POR ÁREA
+   ========================================= */
+
+.role-dev {
+    background: #0056b3; /* Azul SENAC secundário */
+}
+
+.role-mec {
+    background: #d35400; /* Laranja escuro */
+}
+
+.role-hw {
+    background: #2c3e50; /* Cinza tecnológico */
+}
+
+/* =========================================
+   TEXTO DE INTRODUÇÃO
+   ========================================= */
+
+.container p {
+    margin-top: 35px;
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: 260px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .team-photo {
+        height: 260px;
+    }
+}

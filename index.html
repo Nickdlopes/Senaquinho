@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Projeto Robô Explorador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos da Home */
+        .model-3d-section { background-color: #002a55; color: white; padding: 60px 0; text-align: center; }
+        .process-steps { display: flex; justify-content: space-around; padding: 40px 0; text-align: center; }
+        .step-icon { background: #eee; width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary-orange); }
+        .mini-team { display: flex; gap: 20px; justify-content: center; }
+        .mini-card { background: white; padding: 10px; text-align: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Senaquinho</a>
+            <ul class="nav-links">
+                <li><a href="index.html" style="color:var(--primary-orange);">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="time.html">Integrantes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="section-title">Projeto Robô Explorador</h1>
+            <span class="section-subtitle">Explorando Novos Horizontes!</span>
+        </div>
+    </section>
+
+    <section class="model-3d-section">
+        <div class="container">
+            <h2>Modelo 3D</h2>
+            <div style="background: rgba(255,255,255,0.1); height: 300px; margin: 20px 0; display: flex; align-items: center; justify-content: center;">
+                [Placeholder Visualização 3D]
+            </div>
+            <button class="btn-cta">Ver em 3D</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 style="text-align: center; color: var(--primary-blue);">Nosso Processo</h2>
+        <div class="process-steps">
+            <div><div class="step-icon">1</div><h3>Design</h3></div>
+            <div><div class="step-icon">2</div><h3>Prototipagem</h3></div>
+            <div><div class="step-icon">3</div><h3>Programação</h3></div>
+            <div><div class="step-icon">4</div><h3>Teste</h3></div>
+        </div>
+    </section>
+
+    <section class="container" style="background-color: var(--primary-blue); border-radius: 8px; padding: 40px;">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Nosso Time</h2>
+        <div class="mini-team">
+            <div class="mini-card">
+                <img src="avatar.jpg" style="width: 80px; height: 80px; border-radius: 50%; background: #ccc;">
+                <h4>Ana Coelho</h4>
+            </div>
+            <div class="mini-card"><img src="avatar.jpg" style="width: 80px; height: 80px; border-radius: 50%; background: #ccc;"><h4>Lucas Silva</h4></div>
+            <div class="mini-card"><img src="avatar.jpg" style="width: 80px; height: 80px; border-radius: 50%; background: #ccc;"><h4>Mariana Costa</h4></div>
+            <div class="mini-card"><img src="avatar.jpg" style="width: 80px; height: 80px; border-radius: 50%; background: #ccc;"><h4>Pedro Almeida</h4></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Projeto Desenvolvido por Estudantes - Senac</p>
+    </footer>
+
+</body>
+</html>

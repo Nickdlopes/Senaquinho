@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - Senaquinho</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Senaquinho</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="time.html">Integrantes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="padding-bottom: 0;">
+        <p style="font-size: 0.9rem; color: #666;">
+            <a href="blog.html" style="text-decoration: none; color: #666;">Blog</a> > <span id="post-breadcrumb" style="color: var(--primary-orange);">Carregando...</span>
+        </p>
+    </div>
+
+    <div class="container blog-container" style="margin-top: 20px;">
+        
+        <main style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            
+            <div id="post-content-area">
+                <p style="text-align: center; padding: 50px;">Carregando conteúdo do post...</p>
+            </div>
+
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Categorias</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn-cta" style="width: 100%; text-align: center; background: #f39c12;">Diário de Projeto</button>
+                    <button class="btn-cta" style="width: 100%; text-align: center; background: #003366;">Tecnologia</button>
+                    <button class="btn-cta" style="width: 100%; text-align: center; background: #003366;">Curiosidades</button>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Postagens Recentes</h3>
+                <div id="recent-posts-list">
+                    <p style="font-size: 0.8rem;">Carregando...</p>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Projeto Desenvolvido por Estudantes - Senac</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Inicia o carregamento específico desta página
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarPostUnico();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Time - Projeto Robô Explorador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Grid da Equipe */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .team-info {
+            padding: 20px 15px;
+        }
+
+        .team-name {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            display: inline-block;
+            background-color: var(--primary-orange);
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Variação de cor para cargos diferentes (opcional) */
+        .role-dev { background-color: #0056b3; } /* Azul */
+        .role-mec { background-color: #d35400; } /* Laranja escuro */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Senaquinho</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="time.html" style="color:var(--primary-orange);">Integrantes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-time.jpg');">
+        <div class="hero-content">
+            <h1 class="section-title">Conheça Nosso Time</h1>
+            <span class="section-subtitle">Os estudantes por trás do projeto</span>
+        </div>
+    </section>
+
+    <div class="container">
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            Conheça nossa equipe multidisciplinar. Somos responsáveis por todo o processo de design, 
+            prototipagem eletrônica, programação e testes de campo do veículo autônomo.
+        </p>
+
+        <div class="team-grid">
+            
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Ana" alt="Foto Ana" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Ana Coelho</h3>
+                    <span class="team-role">Líder de Projeto</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Lucas" alt="Foto Lucas" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Lucas Silva</h3>
+                    <span class="team-role role-dev">Eng. de Software</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Mariana" alt="Foto Mariana" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Mariana Costa</h3>
+                    <span class="team-role role-mec">Eng. Mecânica</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Pedro" alt="Foto Pedro" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Pedro Almeida</h3>
+                    <span class="team-role role-dev">Programador</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Andre" alt="Foto Andre" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">André Santos</h3>
+                    <span class="team-role role-dev">Eng. de Sistemas</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Felipe" alt="Foto Felipe" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Felipe Souza</h3>
+                    <span class="team-role role-mec">Designer 3D</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Renata" alt="Foto Renata" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Renata Dias</h3>
+                    <span class="team-role">Eng. de Hardware</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://placehold.co/300x300/png?text=Eduardo" alt="Foto Eduardo" class="team-photo">
+                <div class="team-info">
+                    <h3 class="team-name">Eduardo C.</h3>
+                    <span class="team-role role-dev">Eletrônica</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Projeto Desenvolvido por Estudantes - Senac</p>
+    </footer>
+</body>
+</html>
